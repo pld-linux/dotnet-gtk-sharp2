@@ -1,6 +1,5 @@
 #
 # Conditional build:
-%bcond_without	gda	# don't build gda binding
 %bcond_without	gnome	# don't build GNOME (and dependent) bindings
 #
 %define		gtkhtml_soversion	%(/bin/ls %{_libdir}/libgtkhtml-3.6.so.* 2>/dev/null | /usr/bin/head -n 1 | /bin/awk '{ split($1,v,"."); print v[4]; }')
@@ -10,12 +9,12 @@
 Summary:	.NET language bindings for GTK+ and GNOME
 Summary(pl):	Wi您ania GTK+ oraz GNOME dla .NET
 Name:		dotnet-gtk-sharp2
-Version:	1.9.5
+Version:	2.3.90
 Release:	1
 License:	LGPL
 Group:		Development/Libraries
 Source0:	http://www.go-mono.com/sources/gtk-sharp-2.0/gtk-sharp-%{version}.tar.gz
-# Source0-md5:	e61f77fd5dad3deb25f53f39e8a45378
+# Source0-md5:	a38f1346b9b6e3688d9880489cbb6ba6
 Patch1:		%{name}-destdir.patch
 Patch2:		%{name}-mint.patch
 Patch3:		%{name}-pc-libdir.patch
@@ -23,7 +22,6 @@ URL:		http://gtk-sharp.sf.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libart_lgpl-devel >= 2.2.0
-%{?with_gda:BuildRequires:	libgda-devel >= 1.0.0}
 BuildRequires:	libglade2-devel >= 2.0.1
 BuildRequires:	librsvg-devel >= 2.4.0
 BuildRequires:	libtool
@@ -117,58 +115,6 @@ Requires:	%{name}-gnome-devel = %{version}-%{release}
 
 %description gnome-static -l pl
 Wi您ania .NET dla bibliotek GNOME - static libraries.
-
-%package gda
-Summary:	.NET language bindings for GDA library
-Summary(pl):	Wi您ania .NET dla biblioteki GDA
-Group:		Libraries
-Requires:	%{name} = %{version}-%{release}
-
-%description gda
-.NET language bindings for GDA library.
-
-%description gda -l pl
-Wi您ania .NET dla biblioteki GDA.
-
-%package gda-devel
-Summary:	.NET language bindings for GDA library - development files
-Summary(pl):	Wi您ania .NET dla biblioteki GDA - pliki programistyczne
-Group:		Libraries
-Requires:	%{name}-devel = %{version}-%{release}
-Requires:	%{name}-gda = %{version}-%{release}
-
-%description gda-devel
-.NET language bindings for GDA library - development files.
-
-%description gda-devel -l pl
-Wi您ania .NET dla biblioteki GDA - pliki programistyczne.
-
-%package gnomedb
-Summary:	.NET language bindings for GNOME-DB library
-Summary(pl):	Wi您ania .NET dla biblioteki GNOME-DB
-Group:		Libraries
-Requires:	%{name}-gda = %{version}-%{release}
-Requires:	%{name}-gnome = %{version}-%{release}
-
-%description gnomedb
-.NET language bindings for GNOME-DB library.
-
-%description gnomedb -l pl
-Wi您ania .NET dla biblioteki GNOME-DB.
-
-%package gnomedb-devel
-Summary:	.NET language bindings for GNOME-DB library - development files
-Summary(pl):	Wi您ania .NET dla biblioteki GNOME-DB - pliki programistyczne
-Group:		Libraries
-Requires:	%{name}-gda-devel = %{version}-%{release}
-Requires:	%{name}-gnome-devel = %{version}-%{release}
-Requires:	%{name}-gnomedb = %{version}-%{release}
-
-%description gnomedb-devel
-.NET language bindings for GNOME-DB library - development files.
-
-%description gnomedb-devel -l pl
-Wi您ania .NET dla biblioteki GNOME-DB - pliki programistyczne.
 
 %prep
 %setup -q -n gtk-sharp-%{version}
@@ -292,28 +238,4 @@ rm -rf $RPM_BUILD_ROOT
 %files gnome-static
 %defattr(644,root,root,755)
 %{_libdir}/libgnomesharpglue-2.a
-%endif
-
-%if %{with gda}
-%files gda
-%defattr(644,root,root,755)
-/usr/lib/mono/gac/gda-sharp
-
-%files gda-devel
-%defattr(644,root,root,755)
-/usr/lib/mono/gtk-sharp-2.0/gda-sharp.dll
-%{_datadir}/gapi-2.0/gda-api.xml
-%{_pkgconfigdir}/gda-sharp-2.0.pc
-%endif
-
-%if %{with gnome} && %{with gda}
-%files gnomedb
-%defattr(644,root,root,755)
-/usr/lib/mono/gac/gnomedb-sharp
-
-%files gnomedb-devel
-%defattr(644,root,root,755)
-/usr/lib/mono/gtk-sharp-2.0/gnomedb-sharp.dll
-%{_datadir}/gapi-2.0/gnomedb-api.xml
-%{_pkgconfigdir}/gnomedb-sharp-2.0.pc
 %endif
