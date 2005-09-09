@@ -5,7 +5,7 @@ diff -ruN gtk-sharp-2.5.91./configure.in gtk-sharp-2.5.91/configure.in
  
  MONO_REQUIRED_VERSION=1.0
  PKG_CHECK_MODULES(MONO_DEPENDENCY, mono >= $MONO_REQUIRED_VERSION, has_mono=true, has_mono=false)
-+PKG_CHECK_MODULES(MINT_DEPENDENCY, mint >= $MONO_REQUIRED_VERSION, has_mono=true, has_mono=false)
++PKG_CHECK_MODULES(MINT_DEPENDENCY, mint >= $MONO_REQUIRED_VERSION, has_mint=true, has_mint=false)
  
  AC_PATH_PROG(GACUTIL, gacutil, no)
  if test "x$GACUTIL" = "xno" ; then
