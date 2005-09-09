@@ -9,12 +9,12 @@
 Summary:	.NET language bindings for GTK+ and GNOME
 Summary(pl):	Wi±zania GTK+ oraz GNOME dla .NET
 Name:		dotnet-gtk-sharp2
-Version:	2.5.90
-Release:	2
+Version:	2.5.91
+Release:	1
 License:	LGPL
 Group:		Development/Libraries
 Source0:	http://www.go-mono.com/sources/gtk-sharp-2.0/gtk-sharp-%{version}.tar.gz
-# Source0-md5:	aedbcaaa99cc9204159564b981c7a980
+# Source0-md5:	fc1ac020b2a9d9ff0fbfa4c00ffdb20c
 Patch1:		%{name}-destdir.patch
 Patch2:		%{name}-mint.patch
 Patch3:		%{name}-pc-libdir.patch
@@ -182,6 +182,7 @@ rm -rf $RPM_BUILD_ROOT
 /usr/lib/mono/gtk-sharp-2.0/gtk-dotnet.dll
 /usr/lib/mono/gtk-sharp-2.0/gtk-sharp.dll
 /usr/lib/mono/gtk-sharp-2.0/pango-sharp.dll
+%{_libdir}/monodoc/sources/*
 %dir %{_datadir}/gapi-2.0
 %{_datadir}/gapi-2.0/art-api.xml
 %{_datadir}/gapi-2.0/atk-api.xml
