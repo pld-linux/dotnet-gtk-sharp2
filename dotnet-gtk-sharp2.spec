@@ -28,6 +28,7 @@ BuildRequires:	librsvg-devel >= 2.4.0
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel
 BuildRequires:	mono-csharp >= 1.1.7
+BuildRequires:	monodoc
 BuildRequires:	ncurses-devel
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(monoautodeps)
@@ -58,6 +59,7 @@ Summary(pl):	Czê¶æ dla programistów GTK#
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Obsoletes:	gtk-sharp2-devel
+Requires:	monodoc
 
 %description devel
 Tools (C source parser and C# code generator) and documentation for
