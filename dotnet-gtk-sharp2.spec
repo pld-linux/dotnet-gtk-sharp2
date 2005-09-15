@@ -182,7 +182,7 @@ rm -rf $RPM_BUILD_ROOT
 /usr/lib/mono/gtk-sharp-2.0/gtk-dotnet.dll
 /usr/lib/mono/gtk-sharp-2.0/gtk-sharp.dll
 /usr/lib/mono/gtk-sharp-2.0/pango-sharp.dll
-%{_libdir}/monodoc/sources/*
+%{_prefix}/lib/monodoc/sources/*
 %dir %{_datadir}/gapi-2.0
 %{_datadir}/gapi-2.0/art-api.xml
 %{_datadir}/gapi-2.0/atk-api.xml
@@ -196,7 +196,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_pkgconfigdir}/glade-sharp-2.0.pc
 %{_pkgconfigdir}/gtk-dotnet-2.0.pc
 %{_pkgconfigdir}/gtk-sharp-2.0.pc
-
 
 %files static
 %defattr(644,root,root,755)
