@@ -9,15 +9,14 @@
 Summary:	.NET language bindings for GTK+ and GNOME
 Summary(pl):	Wi±zania GTK+ oraz GNOME dla .NET
 Name:		dotnet-gtk-sharp2
-Version:	2.5.91
-Release:	3
+Version:	2.5.92
+Release:	1
 License:	LGPL
 Group:		Development/Libraries
 Source0:	http://www.go-mono.com/sources/gtk-sharp-2.0/gtk-sharp-%{version}.tar.gz
-# Source0-md5:	fc1ac020b2a9d9ff0fbfa4c00ffdb20c
+# Source0-md5:	90156b3ee48fa270e7cadbae0e75b768
 Patch1:		%{name}-destdir.patch
 Patch2:		%{name}-mint.patch
-Patch3:		%{name}-gtkhtml.patch
 URL:		http://gtk-sharp.sf.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -122,7 +121,6 @@ Wi±zania .NET dla bibliotek GNOME - static libraries.
 %setup -q -n gtk-sharp-%{version}
 %patch1 -p1
 %patch2 -p1
-%patch3 -p1
 
 # workaround for variable name
 echo 'm4_pattern_allow(PKG_PATH)' > acinclude.m4
@@ -167,6 +165,15 @@ rm -rf $RPM_BUILD_ROOT
 /usr/lib/mono/gac/gtk-sharp
 /usr/lib/mono/gac/pango-sharp
 
+/usr/lib/mono/gac/policy.2.4.art-sharp
+/usr/lib/mono/gac/policy.2.4.atk-sharp
+/usr/lib/mono/gac/policy.2.4.gdk-sharp
+/usr/lib/mono/gac/policy.2.4.glade-sharp
+/usr/lib/mono/gac/policy.2.4.glib-sharp
+/usr/lib/mono/gac/policy.2.4.gtk-dotnet
+/usr/lib/mono/gac/policy.2.4.gtk-sharp
+/usr/lib/mono/gac/policy.2.4.pango-sharp
+
 %files devel
 %defattr(644,root,root,755)
 %doc README.generator ChangeLog
@@ -192,6 +199,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_pkgconfigdir}/art-sharp-2.0.pc
 %{_pkgconfigdir}/gapi-2.0.pc
 %{_pkgconfigdir}/glade-sharp-2.0.pc
+%{_pkgconfigdir}/glib-sharp-2.0.pc
 %{_pkgconfigdir}/gtk-dotnet-2.0.pc
 %{_pkgconfigdir}/gtk-sharp-2.0.pc
 
@@ -213,6 +221,14 @@ rm -rf $RPM_BUILD_ROOT
 /usr/lib/mono/gac/gtkhtml-sharp
 /usr/lib/mono/gac/rsvg-sharp
 /usr/lib/mono/gac/vte-sharp
+
+/usr/lib/mono/gac/policy.2.4.gconf-sharp-peditors
+/usr/lib/mono/gac/policy.2.4.gconf-sharp
+/usr/lib/mono/gac/policy.2.4.gnome-sharp
+/usr/lib/mono/gac/policy.2.4.gnome-vfs-sharp
+/usr/lib/mono/gac/policy.2.4.gtkhtml-sharp
+/usr/lib/mono/gac/policy.2.4.rsvg-sharp
+/usr/lib/mono/gac/policy.2.4.vte-sharp
 
 %files gnome-devel
 %defattr(644,root,root,755)
