@@ -3,14 +3,13 @@
 %bcond_without	gnome	# don't build GNOME (and dependent) bindings
 #
 %define		gtkhtml_soversion	%(/bin/ls %{_libdir}/libgtkhtml-3.8.so.* 2>/dev/null | /usr/bin/head -n 1 | /bin/awk '{ split($1,v,"."); print v[4]; }')
-%define		gtkhtml_version		%(if [ -e /usr/bin/pkg-config ]; then /usr/bin/pkg-config --modversion libgtkhtml-3.8 2>/dev/null || echo 0; else echo 0; fi)
 %include	/usr/lib/rpm/macros.perl
 %include	/usr/lib/rpm/macros.mono
 Summary:	.NET language bindings for GTK+ and GNOME
 Summary(pl):	Wi±zania GTK+ oraz GNOME dla .NET
 Name:		dotnet-gtk-sharp2
 Version:	2.6.0
-Release:	1
+Release:	2
 License:	LGPL
 Group:		Development/Libraries
 Source0:	http://www.go-mono.com/sources/gtk-sharp-2.0/gtk-sharp-%{version}.tar.gz
@@ -84,7 +83,6 @@ Summary:	.NET language bindings for GNOME libraries
 Summary(pl):	Wi±zania .NET dla bibliotek GNOME
 Group:		Libraries
 Requires:	%{name} = %{version}-%{release}
-%{?with_gnome:Requires:	gtkhtml = %{gtkhtml_version}}
 
 %description gnome
 .NET language bindings for GNOME libraries.
