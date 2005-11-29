@@ -41,6 +41,7 @@ BuildRequires:	vte-devel >= 0.11.10
 %endif
 Requires:	mono >= 1.1.7
 Obsoletes:	gtk-sharp2
+ExcludeArch:	i386
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
