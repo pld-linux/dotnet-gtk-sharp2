@@ -152,40 +152,40 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README
 %attr(755,root,root) %{_libdir}/lib*sharpglue-2.so
-%attr(755,root,root) /usr/lib/gtk-sharp-2.0/gapi*
-%dir /usr/lib/gtk-sharp-2.0
 %{_libdir}/lib*sharpglue-2.la
-/usr/lib/mono/gac/art-sharp
-/usr/lib/mono/gac/atk-sharp
-/usr/lib/mono/gac/gdk-sharp
-/usr/lib/mono/gac/glade-sharp
-/usr/lib/mono/gac/glib-sharp
-/usr/lib/mono/gac/gtk-dotnet
-/usr/lib/mono/gac/gtk-sharp
-/usr/lib/mono/gac/pango-sharp
+%dir %{_prefix}/lib/gtk-sharp-2.0
+%attr(755,root,root) %{_prefix}/lib/gtk-sharp-2.0/gapi*
+%{_prefix}/lib/mono/gac/art-sharp
+%{_prefix}/lib/mono/gac/atk-sharp
+%{_prefix}/lib/mono/gac/gdk-sharp
+%{_prefix}/lib/mono/gac/glade-sharp
+%{_prefix}/lib/mono/gac/glib-sharp
+%{_prefix}/lib/mono/gac/gtk-dotnet
+%{_prefix}/lib/mono/gac/gtk-sharp
+%{_prefix}/lib/mono/gac/pango-sharp
 
-/usr/lib/mono/gac/policy.2.4.art-sharp
-/usr/lib/mono/gac/policy.2.4.atk-sharp
-/usr/lib/mono/gac/policy.2.4.gdk-sharp
-/usr/lib/mono/gac/policy.2.4.glade-sharp
-/usr/lib/mono/gac/policy.2.4.glib-sharp
-/usr/lib/mono/gac/policy.2.4.gtk-dotnet
-/usr/lib/mono/gac/policy.2.4.gtk-sharp
-/usr/lib/mono/gac/policy.2.4.pango-sharp
+%{_prefix}/lib/mono/gac/policy.2.4.art-sharp
+%{_prefix}/lib/mono/gac/policy.2.4.atk-sharp
+%{_prefix}/lib/mono/gac/policy.2.4.gdk-sharp
+%{_prefix}/lib/mono/gac/policy.2.4.glade-sharp
+%{_prefix}/lib/mono/gac/policy.2.4.glib-sharp
+%{_prefix}/lib/mono/gac/policy.2.4.gtk-dotnet
+%{_prefix}/lib/mono/gac/policy.2.4.gtk-sharp
+%{_prefix}/lib/mono/gac/policy.2.4.pango-sharp
 
 %files devel
 %defattr(644,root,root,755)
 %doc README.generator ChangeLog
 %attr(755,root,root) %{_bindir}/gapi*
-%dir /usr/lib/mono/gtk-sharp-2.0
-/usr/lib/mono/gtk-sharp-2.0/art-sharp.dll
-/usr/lib/mono/gtk-sharp-2.0/atk-sharp.dll
-/usr/lib/mono/gtk-sharp-2.0/gdk-sharp.dll
-/usr/lib/mono/gtk-sharp-2.0/glade-sharp.dll
-/usr/lib/mono/gtk-sharp-2.0/glib-sharp.dll
-/usr/lib/mono/gtk-sharp-2.0/gtk-dotnet.dll
-/usr/lib/mono/gtk-sharp-2.0/gtk-sharp.dll
-/usr/lib/mono/gtk-sharp-2.0/pango-sharp.dll
+%dir %{_prefix}/lib/mono/gtk-sharp-2.0
+%{_prefix}/lib/mono/gtk-sharp-2.0/art-sharp.dll
+%{_prefix}/lib/mono/gtk-sharp-2.0/atk-sharp.dll
+%{_prefix}/lib/mono/gtk-sharp-2.0/gdk-sharp.dll
+%{_prefix}/lib/mono/gtk-sharp-2.0/glade-sharp.dll
+%{_prefix}/lib/mono/gtk-sharp-2.0/glib-sharp.dll
+%{_prefix}/lib/mono/gtk-sharp-2.0/gtk-dotnet.dll
+%{_prefix}/lib/mono/gtk-sharp-2.0/gtk-sharp.dll
+%{_prefix}/lib/mono/gtk-sharp-2.0/pango-sharp.dll
 %{_prefix}/lib/monodoc/sources/*
 %dir %{_datadir}/gapi-2.0
 %{_datadir}/gapi-2.0/art-api.xml
@@ -210,34 +210,34 @@ rm -rf $RPM_BUILD_ROOT
 %files gnome
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/gconfsharp2-schemagen
-%attr(755,root,root) /usr/lib/gtk-sharp-2.0/gconfsharp-schemagen.exe
 %attr(755,root,root) %{_libdir}/libgnomesharpglue-2.so
+%attr(755,root,root) %{_prefix}/lib/gtk-sharp-2.0/gconfsharp-schemagen.exe
 %{_libdir}/libgnomesharpglue-2.la
-/usr/lib/mono/gac/gconf-sharp
-/usr/lib/mono/gac/gconf-sharp-peditors
-/usr/lib/mono/gac/gnome-sharp
-/usr/lib/mono/gac/gnome-vfs-sharp
-/usr/lib/mono/gac/gtkhtml-sharp
-/usr/lib/mono/gac/rsvg-sharp
-/usr/lib/mono/gac/vte-sharp
+%{_prefix}/lib/mono/gac/gconf-sharp
+%{_prefix}/lib/mono/gac/gconf-sharp-peditors
+%{_prefix}/lib/mono/gac/gnome-sharp
+%{_prefix}/lib/mono/gac/gnome-vfs-sharp
+%{_prefix}/lib/mono/gac/gtkhtml-sharp
+%{_prefix}/lib/mono/gac/rsvg-sharp
+%{_prefix}/lib/mono/gac/vte-sharp
 
-/usr/lib/mono/gac/policy.2.4.gconf-sharp-peditors
-/usr/lib/mono/gac/policy.2.4.gconf-sharp
-/usr/lib/mono/gac/policy.2.4.gnome-sharp
-/usr/lib/mono/gac/policy.2.4.gnome-vfs-sharp
-/usr/lib/mono/gac/policy.2.4.gtkhtml-sharp
-/usr/lib/mono/gac/policy.2.4.rsvg-sharp
-/usr/lib/mono/gac/policy.2.4.vte-sharp
+%{_prefix}/lib/mono/gac/policy.2.4.gconf-sharp-peditors
+%{_prefix}/lib/mono/gac/policy.2.4.gconf-sharp
+%{_prefix}/lib/mono/gac/policy.2.4.gnome-sharp
+%{_prefix}/lib/mono/gac/policy.2.4.gnome-vfs-sharp
+%{_prefix}/lib/mono/gac/policy.2.4.gtkhtml-sharp
+%{_prefix}/lib/mono/gac/policy.2.4.rsvg-sharp
+%{_prefix}/lib/mono/gac/policy.2.4.vte-sharp
 
 %files gnome-devel
 %defattr(644,root,root,755)
-/usr/lib/mono/gtk-sharp-2.0/gconf-sharp.dll
-/usr/lib/mono/gtk-sharp-2.0/gconf-sharp-peditors.dll
-/usr/lib/mono/gtk-sharp-2.0/gnome-sharp.dll
-/usr/lib/mono/gtk-sharp-2.0/gnome-vfs-sharp.dll
-/usr/lib/mono/gtk-sharp-2.0/gtkhtml-sharp.dll
-/usr/lib/mono/gtk-sharp-2.0/rsvg-sharp.dll
-/usr/lib/mono/gtk-sharp-2.0/vte-sharp.dll
+%{_prefix}/lib/mono/gtk-sharp-2.0/gconf-sharp.dll
+%{_prefix}/lib/mono/gtk-sharp-2.0/gconf-sharp-peditors.dll
+%{_prefix}/lib/mono/gtk-sharp-2.0/gnome-sharp.dll
+%{_prefix}/lib/mono/gtk-sharp-2.0/gnome-vfs-sharp.dll
+%{_prefix}/lib/mono/gtk-sharp-2.0/gtkhtml-sharp.dll
+%{_prefix}/lib/mono/gtk-sharp-2.0/rsvg-sharp.dll
+%{_prefix}/lib/mono/gtk-sharp-2.0/vte-sharp.dll
 %{_datadir}/gapi-2.0/gnome-api.xml
 %{_datadir}/gapi-2.0/gnome-vfs-api.xml
 %{_datadir}/gapi-2.0/gtkhtml-api.xml
