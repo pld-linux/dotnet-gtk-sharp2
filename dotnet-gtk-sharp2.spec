@@ -8,12 +8,12 @@
 Summary:	.NET language bindings for GTK+ and GNOME
 Summary(pl):	Wi±zania GTK+ oraz GNOME dla .NET
 Name:		dotnet-gtk-sharp2
-Version:	2.6.0
-Release:	4
+Version:	2.7.90
+Release:	1
 License:	LGPL
 Group:		Development/Libraries
 Source0:	http://www.go-mono.com/sources/gtk-sharp-2.0/gtk-sharp-%{version}.tar.gz
-# Source0-md5:	df9c4631e325e9e27135e7170c15f318
+# Source0-md5:	1004fa8044d0b04d97219a73e1082936
 Patch1:		%{name}-destdir.patch
 Patch2:		%{name}-mint.patch
 URL:		http://gtk-sharp.sf.net/
@@ -174,6 +174,15 @@ rm -rf $RPM_BUILD_ROOT
 %{_prefix}/lib/mono/gac/policy.2.4.gtk-sharp
 %{_prefix}/lib/mono/gac/policy.2.4.pango-sharp
 
+%{_prefix}/lib/mono/gac/policy.2.6.art-sharp
+%{_prefix}/lib/mono/gac/policy.2.6.atk-sharp
+%{_prefix}/lib/mono/gac/policy.2.6.gdk-sharp
+%{_prefix}/lib/mono/gac/policy.2.6.glade-sharp
+%{_prefix}/lib/mono/gac/policy.2.6.glib-sharp
+%{_prefix}/lib/mono/gac/policy.2.6.gtk-dotnet
+%{_prefix}/lib/mono/gac/policy.2.6.gtk-sharp
+%{_prefix}/lib/mono/gac/policy.2.6.pango-sharp
+
 %files devel
 %defattr(644,root,root,755)
 %doc README.generator ChangeLog
@@ -229,6 +238,14 @@ rm -rf $RPM_BUILD_ROOT
 %{_prefix}/lib/mono/gac/policy.2.4.gtkhtml-sharp
 %{_prefix}/lib/mono/gac/policy.2.4.rsvg-sharp
 %{_prefix}/lib/mono/gac/policy.2.4.vte-sharp
+
+%{_prefix}/lib/mono/gac/policy.2.6.gconf-sharp-peditors
+%{_prefix}/lib/mono/gac/policy.2.6.gconf-sharp
+%{_prefix}/lib/mono/gac/policy.2.6.gnome-sharp
+%{_prefix}/lib/mono/gac/policy.2.6.gnome-vfs-sharp
+%{_prefix}/lib/mono/gac/policy.2.6.gtkhtml-sharp
+%{_prefix}/lib/mono/gac/policy.2.6.rsvg-sharp
+%{_prefix}/lib/mono/gac/policy.2.6.vte-sharp
 
 %files gnome-devel
 %defattr(644,root,root,755)
