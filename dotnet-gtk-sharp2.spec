@@ -37,7 +37,7 @@ BuildRequires:	libgnomecanvas-devel >= 2.4.0
 %{?with_gda:BuildRequires:	libgnomedb-devel >= 1.0.0}
 BuildRequires:	libgnomeprintui-devel >= 2.4.0
 BuildRequires:	libgnomeui-devel >= 2.4.0
-BuildRequires:	vte-devel >= 0.11.10
+BuildRequires:	vte-devel >= 0.11.16-2
 %endif
 Requires:	mono >= 1.1.7
 Obsoletes:	gtk-sharp2
