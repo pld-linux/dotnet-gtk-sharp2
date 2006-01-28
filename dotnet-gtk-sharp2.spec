@@ -24,7 +24,7 @@ BuildRequires:	libglade2-devel >= 2.0.1
 BuildRequires:	librsvg-devel >= 2.4.0
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel
-BuildRequires:	mono-csharp >= 1.1.7
+BuildRequires:	mono-csharp >= 1.1.11
 BuildRequires:	monodoc
 BuildRequires:	ncurses-devel
 BuildRequires:	pkgconfig
