@@ -14,6 +14,7 @@ License:	LGPL
 Group:		Development/Libraries
 Source0:	http://www.go-mono.com/sources/gtk-sharp-2.8/gtk-sharp-%{version}.tar.gz
 # Source0-md5:	e7b68519ede7fd7521b2c6e10410aefa
+Patch0:		%{name}-nognome.patch
 Patch1:		%{name}-destdir.patch
 Patch2:		%{name}-mint.patch
 URL:		http://gtk-sharp.sf.net/
@@ -118,11 +119,9 @@ Wi±zania .NET dla bibliotek GNOME - static libraries.
 
 %prep
 %setup -q -n gtk-sharp-%{version}
+%patch0 -p1
 %patch1 -p1
 %patch2 -p1
-
-# workaround for variable name
-echo 'm4_pattern_allow(PKG_PATH)' > acinclude.m4
 
 %build
 %{__libtoolize}
