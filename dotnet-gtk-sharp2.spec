@@ -59,6 +59,7 @@ Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Obsoletes:	gtk-sharp2-devel
 Requires:	monodoc
+Requires:	which
 
 %description devel
 Tools (C source parser and C# code generator) and documentation for
