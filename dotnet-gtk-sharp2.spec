@@ -17,7 +17,7 @@ Source0:	http://www.go-mono.com/sources/gtk-sharp-2.8/gtk-sharp-%{version}.tar.g
 Patch0:		%{name}-nognome.patch
 Patch1:		%{name}-destdir.patch
 Patch2:		%{name}-mint.patch
-URL:		http://gtk-sharp.sf.net/
+URL:		http://gtk-sharp.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libart_lgpl-devel >= 2.2.0
@@ -29,8 +29,8 @@ BuildRequires:	mono-csharp >= 1.1.11
 BuildRequires:	monodoc
 BuildRequires:	ncurses-devel
 BuildRequires:	pkgconfig
-BuildRequires:	rpmbuild(monoautodeps)
 BuildRequires:	rpm-perlprov
+BuildRequires:	rpmbuild(monoautodeps)
 %if %{with gnome}
 BuildRequires:	gnome-panel-devel >= 2.10.0
 BuildRequires:	gtkhtml-devel >= 3.8.0
@@ -57,9 +57,9 @@ Summary:	Development part of GTK#
 Summary(pl):	Czê¶æ dla programistów GTK#
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Obsoletes:	gtk-sharp2-devel
 Requires:	monodoc
 Requires:	which
+Obsoletes:	gtk-sharp2-devel
 
 %description devel
 Tools (C source parser and C# code generator) and documentation for
