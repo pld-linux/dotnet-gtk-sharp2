@@ -12,10 +12,11 @@ Version:	2.8.2
 Release:	1
 License:	LGPL
 Group:		Development/Libraries
-Source0:	http://www.go-mono.com/sources/gtk-sharp-2.8/gtk-sharp-%{version}.tar.gz
+Source0:	http://www.go-mono.com/sources/gtk-sharp-2.0/gtk-sharp-%{version}.tar.gz
 # Source0-md5:	e7b68519ede7fd7521b2c6e10410aefa
 Patch1:		%{name}-destdir.patch
 Patch2:		%{name}-mint.patch
+Patch3:		%{name}-nognome.patch
 URL:		http://gtk-sharp.sf.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -24,7 +25,7 @@ BuildRequires:	libglade2-devel >= 2.0.1
 BuildRequires:	librsvg-devel >= 2.4.0
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel
-BuildRequires:	mono-csharp >= 1.1.11
+BuildRequires:	mono-csharp >= 1.1.7
 BuildRequires:	monodoc
 BuildRequires:	ncurses-devel
 BuildRequires:	pkgconfig
@@ -37,10 +38,11 @@ BuildRequires:	libgnomecanvas-devel >= 2.4.0
 %{?with_gda:BuildRequires:	libgnomedb-devel >= 1.0.0}
 BuildRequires:	libgnomeprintui-devel >= 2.4.0
 BuildRequires:	libgnomeui-devel >= 2.4.0
-BuildRequires:	vte-devel >= 0.11.16-2
+BuildRequires:	vte-devel >= 0.11.10
 %endif
 Requires:	mono >= 1.1.7
 Obsoletes:	gtk-sharp2
+ExclusiveArch:	%{ix86} %{x8664} arm hppa ia64 ppc s390 s390x
 ExcludeArch:	i386
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -120,9 +122,7 @@ Wi±zania .NET dla bibliotek GNOME - static libraries.
 %setup -q -n gtk-sharp-%{version}
 %patch1 -p1
 %patch2 -p1
-
-# workaround for variable name
-echo 'm4_pattern_allow(PKG_PATH)' > acinclude.m4
+%patch3 -p1
 
 %build
 %{__libtoolize}
