@@ -8,14 +8,15 @@
 Summary:	.NET language bindings for GTK+ and GNOME
 Summary(pl):	Wi±zania GTK+ oraz GNOME dla .NET
 Name:		dotnet-gtk-sharp2
-Version:	2.6.0
-Release:	4
+Version:	2.8.2
+Release:	1
 License:	LGPL
 Group:		Development/Libraries
 Source0:	http://www.go-mono.com/sources/gtk-sharp-2.0/gtk-sharp-%{version}.tar.gz
-# Source0-md5:	df9c4631e325e9e27135e7170c15f318
+# Source0-md5:	e7b68519ede7fd7521b2c6e10410aefa
 Patch1:		%{name}-destdir.patch
 Patch2:		%{name}-mint.patch
+Patch3:		%{name}-nognome.patch
 URL:		http://gtk-sharp.sf.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -41,6 +42,7 @@ BuildRequires:	vte-devel >= 0.11.10
 %endif
 Requires:	mono >= 1.1.7
 Obsoletes:	gtk-sharp2
+ExclusiveArch:	%{ix86} %{x8664} arm hppa ia64 ppc s390 s390x
 ExcludeArch:	i386
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -120,9 +122,7 @@ Wi±zania .NET dla bibliotek GNOME - static libraries.
 %setup -q -n gtk-sharp-%{version}
 %patch1 -p1
 %patch2 -p1
-
-# workaround for variable name
-echo 'm4_pattern_allow(PKG_PATH)' > acinclude.m4
+%patch3 -p1
 
 %build
 %{__libtoolize}
@@ -173,6 +173,15 @@ rm -rf $RPM_BUILD_ROOT
 %{_prefix}/lib/mono/gac/policy.2.4.gtk-dotnet
 %{_prefix}/lib/mono/gac/policy.2.4.gtk-sharp
 %{_prefix}/lib/mono/gac/policy.2.4.pango-sharp
+
+%{_prefix}/lib/mono/gac/policy.2.6.art-sharp
+%{_prefix}/lib/mono/gac/policy.2.6.atk-sharp
+%{_prefix}/lib/mono/gac/policy.2.6.gdk-sharp
+%{_prefix}/lib/mono/gac/policy.2.6.glade-sharp
+%{_prefix}/lib/mono/gac/policy.2.6.glib-sharp
+%{_prefix}/lib/mono/gac/policy.2.6.gtk-dotnet
+%{_prefix}/lib/mono/gac/policy.2.6.gtk-sharp
+%{_prefix}/lib/mono/gac/policy.2.6.pango-sharp
 
 %files devel
 %defattr(644,root,root,755)
@@ -229,6 +238,14 @@ rm -rf $RPM_BUILD_ROOT
 %{_prefix}/lib/mono/gac/policy.2.4.gtkhtml-sharp
 %{_prefix}/lib/mono/gac/policy.2.4.rsvg-sharp
 %{_prefix}/lib/mono/gac/policy.2.4.vte-sharp
+
+%{_prefix}/lib/mono/gac/policy.2.6.gconf-sharp-peditors
+%{_prefix}/lib/mono/gac/policy.2.6.gconf-sharp
+%{_prefix}/lib/mono/gac/policy.2.6.gnome-sharp
+%{_prefix}/lib/mono/gac/policy.2.6.gnome-vfs-sharp
+%{_prefix}/lib/mono/gac/policy.2.6.gtkhtml-sharp
+%{_prefix}/lib/mono/gac/policy.2.6.rsvg-sharp
+%{_prefix}/lib/mono/gac/policy.2.6.vte-sharp
 
 %files gnome-devel
 %defattr(644,root,root,755)
