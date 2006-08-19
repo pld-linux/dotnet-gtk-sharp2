@@ -8,7 +8,7 @@ Name:		dotnet-gtk-sharp2
 Version:	2.9.0
 Release:	1
 License:	LGPL
-Group:		Development/Libraries
+Group:		Libraries
 Source0:	http://ftp.gnome.org/pub/gnome/sources/gtk-sharp/2.9/gtk-sharp-%{version}.tar.bz2
 # Source0-md5:	06228185cdbd34e033817940361e143f
 Patch0:		%{name}-destdir.patch
