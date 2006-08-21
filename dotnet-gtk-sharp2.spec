@@ -5,12 +5,12 @@
 Summary:	.NET language bindings for GTK+
 Summary(pl):	Wi±zania GTK+ dla .NET
 Name:		dotnet-gtk-sharp2
-Version:	2.9.0
+Version:	2.10.0
 Release:	1
 License:	LGPL
 Group:		Libraries
-Source0:	http://ftp.gnome.org/pub/gnome/sources/gtk-sharp/2.9/gtk-sharp-%{version}.tar.bz2
-# Source0-md5:	06228185cdbd34e033817940361e143f
+Source0:	http://ftp.gnome.org/pub/gnome/sources/gtk-sharp/2.10/gtk-sharp-%{version}.tar.bz2
+# Source0-md5:	7786801c53537e8c208fb9f46c22f18b
 Patch0:		%{name}-destdir.patch
 Patch1:		%{name}-mint.patch
 URL:		http://gtk-sharp.sourceforge.net/
@@ -25,10 +25,11 @@ BuildRequires:	ncurses-devel
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(monoautodeps)
 BuildRequires:	rpm-perlprov
-Requires:	gtk+2 >= 2:2.10.1
+Requires:	gtk+2 >= 2:2.10.2
 Requires:	libglade2 >= 1:2.6.0
 Requires:	mono >= 1.1.16.1
 Obsoletes:	gtk-sharp2
+ExclusiveArch:	%{ix86} %{x8664} arm hppa ia64 ppc s390 s390x sparc sparcv9 sparc64
 ExcludeArch:	i386
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -43,7 +44,7 @@ Summary:	Development part of GTK#
 Summary(pl):	Czê¶æ dla programistów GTK#
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	monodoc
+Requires:	monodoc >= 1.1.16
 Requires:	which
 Obsoletes:	gtk-sharp2-devel
 
