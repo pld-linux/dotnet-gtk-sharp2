@@ -3,7 +3,7 @@
 %include	/usr/lib/rpm/macros.mono
 #
 Summary:	.NET language bindings for GTK+
-Summary(pl):	Wi±zania GTK+ dla .NET
+Summary(pl.UTF-8):   WiÄ…zania GTK+ dla .NET
 Name:		dotnet-gtk-sharp2
 Version:	2.10.0
 Release:	1
@@ -36,12 +36,12 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 This package provides bindings for .NET to GTK+ libraries.
 
-%description -l pl
-Pakiet ten dostarcza wi±zania dla .NET do bibliotek z GTK+.
+%description -l pl.UTF-8
+Pakiet ten dostarcza wiÄ…zania dla .NET do bibliotek z GTK+.
 
 %package devel
 Summary:	Development part of GTK#
-Summary(pl):	Czê¶æ dla programistów GTK#
+Summary(pl.UTF-8):   CzÄ™Å›Ä‡ dla programistÃ³w GTK#
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	monodoc >= 1.1.16
@@ -52,20 +52,20 @@ Obsoletes:	gtk-sharp2-devel
 Tools (C source parser and C# code generator) and documentation for
 developing applications using GTK#.
 
-%description devel -l pl
-Narzêdzia (parser kodu C oraz generator kodu C#) i dokumentacja
-potrzebne przy tworzeniu aplikacji korzystaj±cych z GTK#.
+%description devel -l pl.UTF-8
+NarzÄ™dzia (parser kodu C oraz generator kodu C#) i dokumentacja
+potrzebne przy tworzeniu aplikacji korzystajÄ…cych z GTK#.
 
 %package static
 Summary:	Static gtk-sharp libraries
-Summary(pl):	Biblioteki statyczne gtk-sharp
+Summary(pl.UTF-8):   Biblioteki statyczne gtk-sharp
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static gtk-sharp libraries.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Biblioteki statyczne gtk-sharp.
 
 %prep
