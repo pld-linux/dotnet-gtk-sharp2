@@ -3,7 +3,7 @@
 %include	/usr/lib/rpm/macros.mono
 #
 Summary:	.NET language bindings for GTK+
-Summary(pl.UTF-8):   Wiązania GTK+ dla .NET
+Summary(pl.UTF-8):	Wiązania GTK+ dla .NET
 Name:		dotnet-gtk-sharp2
 Version:	2.10.0
 Release:	1
@@ -41,7 +41,7 @@ Pakiet ten dostarcza wiązania dla .NET do bibliotek z GTK+.
 
 %package devel
 Summary:	Development part of GTK#
-Summary(pl.UTF-8):   Część dla programistów GTK#
+Summary(pl.UTF-8):	Część dla programistów GTK#
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	monodoc >= 1.1.16
@@ -58,7 +58,7 @@ potrzebne przy tworzeniu aplikacji korzystających z GTK#.
 
 %package static
 Summary:	Static gtk-sharp libraries
-Summary(pl.UTF-8):   Biblioteki statyczne gtk-sharp
+Summary(pl.UTF-8):	Biblioteki statyczne gtk-sharp
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
