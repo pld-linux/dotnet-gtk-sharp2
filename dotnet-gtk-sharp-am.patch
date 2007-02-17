@@ -1,0 +1,11 @@
+--- gtk-sharp-1.0.10/sample/gconf/Makefile.am.orig	2004-05-07 16:22:20.000000000 +0200
++++ gtk-sharp-1.0.10/sample/gconf/Makefile.am	2007-02-17 13:31:02.982710816 +0100
+@@ -24,7 +24,7 @@
+ Settings.cs: $(SCHEMA)
+ 	MONO_PATH=$(top_builddir)/gconf/GConf/gconf-sharp.dll:${MONO_PATH} $(RUNTIME) $(GCONFDIR)/tools/gconfsharp-schemagen.exe Sample $(SCHEMA) > Settings.cs
+ 
+-install-hook: 
++install-data-hook: 
+ 	GCONF_CONFIG_SOURCE="" gconftool-2 --makefile-install-rule $(SCHEMA)
+ 
+ CLEANFILES = sample.exe Settings.cs
