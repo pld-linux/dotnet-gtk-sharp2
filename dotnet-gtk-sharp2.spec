@@ -5,13 +5,13 @@
 Summary:	.NET language bindings for GTK+
 Summary(pl.UTF-8):	Wiązania GTK+ dla .NET
 Name:		dotnet-gtk-sharp2
-Version:	2.10.4
+Version:	2.12.0
 Release:	1
 License:	LGPL
 Group:		Libraries
 #Source0Download: http://go-mono.com/sources-stable/
 Source0:	http://go-mono.com/sources/gtk-sharp210/gtk-sharp-%{version}.tar.bz2
-# Source0-md5:	74030c725b04ca11d13c657bf331ff74
+# Source0-md5:	e04d634c55460b79c69d19c49648c6df
 Patch0:		%{name}-destdir.patch
 Patch1:		%{name}-mint.patch
 URL:		http://gtk-sharp.sourceforge.net/
@@ -138,6 +138,14 @@ rm -rf $RPM_BUILD_ROOT
 %{_prefix}/lib/mono/gac/policy.2.8.gtk-sharp
 %{_prefix}/lib/mono/gac/policy.2.8.pango-sharp
 
+%{_prefix}/lib/mono/gac/policy.2.10.atk-sharp
+%{_prefix}/lib/mono/gac/policy.2.10.gdk-sharp
+%{_prefix}/lib/mono/gac/policy.2.10.glade-sharp
+%{_prefix}/lib/mono/gac/policy.2.10.glib-sharp
+%{_prefix}/lib/mono/gac/policy.2.10.gtk-dotnet
+%{_prefix}/lib/mono/gac/policy.2.10.gtk-sharp
+%{_prefix}/lib/mono/gac/policy.2.10.pango-sharp
+
 %files devel
 %defattr(644,root,root,755)
 %doc README.generator ChangeLog
@@ -174,6 +182,14 @@ rm -rf $RPM_BUILD_ROOT
 %{_prefix}/lib/mono/gtk-sharp-2.0/policy.2.8.gtk-dotnet.dll
 %{_prefix}/lib/mono/gtk-sharp-2.0/policy.2.8.gtk-sharp.dll
 %{_prefix}/lib/mono/gtk-sharp-2.0/policy.2.8.pango-sharp.dll
+
+%{_prefix}/lib/mono/gtk-sharp-2.0/policy.2.10.atk-sharp.dll
+%{_prefix}/lib/mono/gtk-sharp-2.0/policy.2.10.gdk-sharp.dll
+%{_prefix}/lib/mono/gtk-sharp-2.0/policy.2.10.glade-sharp.dll
+%{_prefix}/lib/mono/gtk-sharp-2.0/policy.2.10.glib-sharp.dll
+%{_prefix}/lib/mono/gtk-sharp-2.0/policy.2.10.gtk-dotnet.dll
+%{_prefix}/lib/mono/gtk-sharp-2.0/policy.2.10.gtk-sharp.dll
+%{_prefix}/lib/mono/gtk-sharp-2.0/policy.2.10.pango-sharp.dll
 
 %{_libdir}/monodoc/sources/*
 %dir %{_datadir}/gapi-2.0
