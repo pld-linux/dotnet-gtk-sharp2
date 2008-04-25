@@ -10,7 +10,7 @@ Release:	1
 License:	LGPL
 Group:		Libraries
 #Source0Download: http://go-mono.com/sources-stable/
-Source0:	http://go-mono.com/sources/gtk-sharp210/gtk-sharp-%{version}.tar.bz2
+Source0:	http://go-mono.com/sources/gtk-sharp212/gtk-sharp-%{version}.tar.bz2
 # Source0-md5:	e04d634c55460b79c69d19c49648c6df
 Patch0:		%{name}-destdir.patch
 Patch1:		%{name}-mint.patch
