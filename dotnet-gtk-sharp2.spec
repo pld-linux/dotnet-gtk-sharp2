@@ -24,7 +24,6 @@ BuildRequires:	mono-csharp >= 1.1.16.1
 BuildRequires:	monodoc >= 1.1.16
 BuildRequires:	ncurses-devel
 BuildRequires:	pkgconfig
-BuildRequires:	readline-devel
 BuildRequires:	rpm-perlprov
 BuildRequires:	rpmbuild(monoautodeps)
 Requires:	gtk+2 >= 2:2.10.13
