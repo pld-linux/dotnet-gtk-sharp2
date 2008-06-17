@@ -10,7 +10,7 @@ Release:	1
 License:	LGPL
 Group:		Libraries
 #Source0Download: http://go-mono.com/sources-stable/
-Source0:	http://ftp.gnome.org/pub/gnome/sources/gtk-sharp/2.12/gtk-sharp-%{version}.tar.bz2
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gtk-sharp/2.12/gtk-sharp-%{version}.tar.bz2
 # Source0-md5:	b769fabc114fa9201c4e085ae36a8540
 Patch0:		%{name}-destdir.patch
 Patch1:		%{name}-mint.patch
@@ -24,8 +24,9 @@ BuildRequires:	mono-csharp >= 1.1.16.1
 BuildRequires:	monodoc >= 1.1.16
 BuildRequires:	ncurses-devel
 BuildRequires:	pkgconfig
-BuildRequires:	rpmbuild(monoautodeps)
+BuildRequires:	readline-devel
 BuildRequires:	rpm-perlprov
+BuildRequires:	rpmbuild(monoautodeps)
 Requires:	gtk+2 >= 2:2.10.13
 Requires:	libglade2 >= 1:2.6.0
 Requires:	mono >= 1.1.16.1
