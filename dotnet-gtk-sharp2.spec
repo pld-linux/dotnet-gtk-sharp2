@@ -9,7 +9,6 @@ Version:	2.12.1
 Release:	1
 License:	LGPL
 Group:		Libraries
-#Source0Download: http://go-mono.com/sources-stable/
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gtk-sharp/2.12/gtk-sharp-%{version}.tar.bz2
 # Source0-md5:	b769fabc114fa9201c4e085ae36a8540
 Patch0:		%{name}-destdir.patch
