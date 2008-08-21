@@ -1,32 +1,29 @@
 #
-%include	/usr/lib/rpm/macros.perl
 %include	/usr/lib/rpm/macros.mono
 #
 Summary:	.NET language bindings for GTK+
 Summary(pl.UTF-8):	Wiązania GTK+ dla .NET
 Name:		dotnet-gtk-sharp2
-Version:	2.12.1
+Version:	2.12.2
 Release:	1
 License:	LGPL
 Group:		Libraries
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gtk-sharp/2.12/gtk-sharp-%{version}.tar.bz2
-# Source0-md5:	b769fabc114fa9201c4e085ae36a8540
+# Source0-md5:	a0ab73f69cdd374816aac14e55e7d351
 Patch0:		%{name}-destdir.patch
 Patch1:		%{name}-mint.patch
 URL:		http://gtk-sharp.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	libglade2-devel >= 1:2.6.0
+BuildRequires:	gtk+2-devel >= 2:2.12.0
+BuildRequires:	libglade2-devel >= 1:2.6.2
 BuildRequires:	libtool
-BuildRequires:	libxml2-devel >= 1:2.6.26
 BuildRequires:	mono-csharp >= 1.1.16.1
 BuildRequires:	monodoc >= 1.1.16
-BuildRequires:	ncurses-devel
 BuildRequires:	pkgconfig
-BuildRequires:	rpm-perlprov
 BuildRequires:	rpmbuild(monoautodeps)
-Requires:	gtk+2 >= 2:2.10.13
-Requires:	libglade2 >= 1:2.6.0
+Requires:	gtk+2 >= 2:2.12.0
+Requires:	libglade2 >= 1:2.6.2
 Requires:	mono >= 1.1.16.1
 Obsoletes:	gtk-sharp2
 ExclusiveArch:	%{ix86} %{x8664} arm hppa ia64 ppc s390 s390x sparc sparcv9 sparc64
@@ -76,15 +73,15 @@ Biblioteki statyczne gtk-sharp.
 %build
 %{__libtoolize}
 %{__aclocal}
+%{__autoconf}
 %{__autoheader}
 %{__automake}
-%{__autoconf}
 %configure
 %{__make} -j1
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{perl_vendorlib},%{_examplesdir}/%{name}-%{version}}
+install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
