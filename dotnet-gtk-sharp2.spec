@@ -98,8 +98,19 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc README
-%attr(755,root,root) %{_libdir}/lib*sharpglue-2.so
-%{_libdir}/lib*sharpglue-2.la
+%attr(755,root,root) %{_libdir}/libatksharpglue-2.so
+%attr(755,root,root) %{_libdir}/libgdksharpglue-2.so
+%attr(755,root,root) %{_libdir}/libgladesharpglue-2.so
+%attr(755,root,root) %{_libdir}/libglibsharpglue-2.so
+%attr(755,root,root) %{_libdir}/libgtksharpglue-2.so
+%attr(755,root,root) %{_libdir}/libpangosharpglue-2.so
+# needed for DllImport on basename
+%{_libdir}/libatksharpglue-2.la
+%{_libdir}/libgdksharpglue-2.la
+%{_libdir}/libgladesharpglue-2.la
+%{_libdir}/libglibsharpglue-2.la
+%{_libdir}/libgtksharpglue-2.la
+%{_libdir}/libpangosharpglue-2.la
 %dir %{_prefix}/lib/gtk-sharp-2.0
 %attr(755,root,root) %{_prefix}/lib/gtk-sharp-2.0/gapi*
 %{_prefix}/lib/mono/gac/atk-sharp
