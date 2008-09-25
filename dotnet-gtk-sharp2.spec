@@ -4,12 +4,12 @@
 Summary:	.NET language bindings for GTK+
 Summary(pl.UTF-8):	Wiązania GTK+ dla .NET
 Name:		dotnet-gtk-sharp2
-Version:	2.12.2
+Version:	2.12.4
 Release:	1
 License:	LGPL
 Group:		Libraries
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gtk-sharp/2.12/gtk-sharp-%{version}.tar.bz2
-# Source0-md5:	a0ab73f69cdd374816aac14e55e7d351
+# Source0-md5:	e7265671f4359b3affbe8f00f01be87e
 Patch0:		%{name}-destdir.patch
 Patch1:		%{name}-mint.patch
 URL:		http://gtk-sharp.sourceforge.net/
