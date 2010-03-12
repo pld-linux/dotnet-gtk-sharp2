@@ -5,7 +5,7 @@ Summary:	.NET language bindings for GTK+
 Summary(pl.UTF-8):	Wiązania GTK+ dla .NET
 Name:		dotnet-gtk-sharp2
 Version:	2.12.9
-Release:	2
+Release:	3
 License:	LGPL
 Group:		Libraries
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gtk-sharp/2.12/gtk-sharp-%{version}.tar.bz2
@@ -41,7 +41,7 @@ Summary:	Development part of GTK#
 Summary(pl.UTF-8):	Część dla programistów GTK#
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	monodoc >= 1.1.16
+Requires:	monodoc >= 2.6
 Requires:	which
 Obsoletes:	gtk-sharp2-devel
 
@@ -84,8 +84,7 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT \
-	monodocdir=%{_libdir}/monodoc/sources
+	DESTDIR=$RPM_BUILD_ROOT
 
 cp -a sample/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
@@ -198,7 +197,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_prefix}/lib/mono/gtk-sharp-2.0/policy.2.10.gtk-sharp.dll
 %{_prefix}/lib/mono/gtk-sharp-2.0/policy.2.10.pango-sharp.dll
 
-%{_libdir}/monodoc/sources/*
+%{_prefix}/lib/monodoc/sources/gtk-sharp-docs.*
 %dir %{_datadir}/gapi-2.0
 %{_datadir}/gapi-2.0/atk-api.xml
 %{_datadir}/gapi-2.0/gdk-api.xml
