@@ -12,6 +12,7 @@ Source0:	http://ftp.gnome.org/pub/GNOME/sources/gtk-sharp/2.12/gtk-sharp-%{versi
 # Source0-md5:	6f836ac05aaaa3ab3dca61c84f0b68a2
 Patch0:		%{name}-destdir.patch
 Patch1:		%{name}-mint.patch
+Patch2:		%{name}-ac.patch
 URL:		http://gtk-sharp.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -69,6 +70,7 @@ Biblioteki statyczne gtk-sharp.
 %setup -q -n gtk-sharp-%{version}
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
 %{__libtoolize}
@@ -214,4 +216,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/lib*sharpglue-2.a
+%{_libdir}/libatksharpglue-2.a
+%{_libdir}/libgdksharpglue-2.a
+%{_libdir}/libgladesharpglue-2.a
+%{_libdir}/libglibsharpglue-2.a
+%{_libdir}/libgtksharpglue-2.a
+%{_libdir}/libpangosharpglue-2.a
