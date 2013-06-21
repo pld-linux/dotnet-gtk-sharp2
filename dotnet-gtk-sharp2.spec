@@ -11,6 +11,7 @@ Source0:	http://download.mono-project.com/sources/gtk-sharp212/gtk-sharp-%{versi
 # Source0-md5:	2e892f265877fe5c16f41b771edb7618
 Patch0:		%{name}-destdir.patch
 Patch1:		%{name}-mint.patch
+Patch2:		%{name}-am.patch
 URL:		http://www.mono-project.com/GtkSharp
 BuildRequires:	atk-devel
 BuildRequires:	autoconf
@@ -21,6 +22,7 @@ BuildRequires:	libglade2-devel >= 1:2.3.6
 BuildRequires:	libtool
 BuildRequires:	mono-csharp >= 1.1.16.1
 BuildRequires:	monodoc >= 1.1.16
+BuildRequires:	pango-devel
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(monoautodeps)
 Requires:	glib2 >= 1:2.31
@@ -39,8 +41,8 @@ This package provides bindings for .NET to GTK+ libraries.
 Pakiet ten dostarcza wiązania dla .NET do bibliotek z GTK+.
 
 %package devel
-Summary:	Development part of GTK#
-Summary(pl.UTF-8):	Część dla programistów GTK#
+Summary:	Development part of Gtk# 2
+Summary(pl.UTF-8):	Część dla programistów Gtk# 2
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	monodoc >= 2.6
@@ -49,28 +51,29 @@ Obsoletes:	gtk-sharp2-devel
 
 %description devel
 Tools (C source parser and C# code generator) and documentation for
-developing applications using GTK#.
+developing applications using Gtk# 2.
 
 %description devel -l pl.UTF-8
 Narzędzia (parser kodu C oraz generator kodu C#) i dokumentacja
-potrzebne przy tworzeniu aplikacji korzystających z GTK#.
+potrzebne przy tworzeniu aplikacji korzystających z Gtk# 2.
 
 %package static
-Summary:	Static gtk-sharp libraries
-Summary(pl.UTF-8):	Biblioteki statyczne gtk-sharp
+Summary:	Static Gtk# 2 libraries
+Summary(pl.UTF-8):	Biblioteki statyczne Gtk# 2
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
-Static gtk-sharp libraries.
+Static Gtk# 2 libraries.
 
 %description static -l pl.UTF-8
-Biblioteki statyczne gtk-sharp.
+Biblioteki statyczne Gtk# 2.
 
 %prep
 %setup -q -n gtk-sharp-%{version}
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
 %{__libtoolize}
@@ -112,8 +115,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/libglibsharpglue-2.la
 %{_libdir}/libgtksharpglue-2.la
 %{_libdir}/libpangosharpglue-2.la
-%dir %{_prefix}/lib/gtk-sharp-2.0
-%attr(755,root,root) %{_prefix}/lib/gtk-sharp-2.0/gapi*
 %{_prefix}/lib/mono/gac/atk-sharp
 %{_prefix}/lib/mono/gac/gdk-sharp
 %{_prefix}/lib/mono/gac/glade-sharp
@@ -157,7 +158,15 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %doc README.generator ChangeLog
-%attr(755,root,root) %{_bindir}/gapi*
+%attr(755,root,root) %{_bindir}/gapi2-codegen
+%attr(755,root,root) %{_bindir}/gapi2-fixup
+%attr(755,root,root) %{_bindir}/gapi2-parser
+%dir %{_prefix}/lib/gtk-sharp-2.0
+%attr(755,root,root) %{_prefix}/lib/gtk-sharp-2.0/gapi-fixup.exe
+%attr(755,root,root) %{_prefix}/lib/gtk-sharp-2.0/gapi-parser.exe
+%attr(755,root,root) %{_prefix}/lib/gtk-sharp-2.0/gapi_codegen.exe
+%attr(755,root,root) %{_prefix}/lib/gtk-sharp-2.0/gapi_pp.pl
+%attr(755,root,root) %{_prefix}/lib/gtk-sharp-2.0/gapi2xml.pl
 %dir %{_prefix}/lib/mono/gtk-sharp-2.0
 %{_prefix}/lib/mono/gtk-sharp-2.0/atk-sharp.dll
 %{_prefix}/lib/mono/gtk-sharp-2.0/gdk-sharp.dll

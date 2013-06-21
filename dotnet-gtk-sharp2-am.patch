@@ -1,0 +1,11 @@
+--- gtk-sharp-2.12.21/configure.in.orig	2013-06-21 19:58:19.032619952 +0200
++++ gtk-sharp-2.12.21/configure.in	2013-06-21 20:08:29.852593568 +0200
+@@ -1,7 +1,7 @@
+ 
+ AC_INIT(README)
+ AC_CANONICAL_SYSTEM
+-AM_CONFIG_HEADER(config.h)
++AC_CONFIG_HEADER(config.h)
+ AM_INIT_AUTOMAKE(gtk-sharp, 2.12.21)
+ AM_MAINTAINER_MODE
+ 
