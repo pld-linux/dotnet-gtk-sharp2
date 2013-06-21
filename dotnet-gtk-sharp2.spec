@@ -2,30 +2,30 @@
 Summary:	.NET language bindings for GTK+
 Summary(pl.UTF-8):	Wiązania GTK+ dla .NET
 Name:		dotnet-gtk-sharp2
-Version:	2.12.11
-Release:	2
+Version:	2.12.21
+Release:	1
 License:	LGPL v2
 Group:		Libraries
 # latest downloads summary at http://download.mono-project.com/sources-stable/
-Source0:	http://download.mono-project.com/sources/gtk-sharp212/gtk-sharp-%{version}.tar.bz2
-# Source0-md5:	c278da6a472c6c13b698af012f543c64
-# alternative source
-#Source0:	http://ftp.gnome.org/pub/GNOME/sources/gtk-sharp/2.12/gtk-sharp-%{version}.tar.bz2
+Source0:	http://download.mono-project.com/sources/gtk-sharp212/gtk-sharp-%{version}.tar.gz
+# Source0-md5:	2e892f265877fe5c16f41b771edb7618
 Patch0:		%{name}-destdir.patch
 Patch1:		%{name}-mint.patch
-Patch2:		%{name}-glib.patch
 URL:		http://www.mono-project.com/GtkSharp
+BuildRequires:	atk-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	glib2-devel >= 1:2.31
 BuildRequires:	gtk+2-devel >= 2:2.12.0
-BuildRequires:	libglade2-devel >= 1:2.6.2
+BuildRequires:	libglade2-devel >= 1:2.3.6
 BuildRequires:	libtool
 BuildRequires:	mono-csharp >= 1.1.16.1
 BuildRequires:	monodoc >= 1.1.16
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(monoautodeps)
+Requires:	glib2 >= 1:2.31
 Requires:	gtk+2 >= 2:2.12.0
-Requires:	libglade2 >= 1:2.6.2
+Requires:	libglade2 >= 1:2.3.6
 Requires:	mono >= 1.1.16.1
 Obsoletes:	gtk-sharp2
 ExclusiveArch:	%{ix86} %{x8664} arm hppa ia64 ppc s390 s390x sparc sparcv9 sparc64
@@ -71,7 +71,6 @@ Biblioteki statyczne gtk-sharp.
 %setup -q -n gtk-sharp-%{version}
 %patch0 -p1
 %patch1 -p1
-%patch2 -p1
 
 %build
 %{__libtoolize}
