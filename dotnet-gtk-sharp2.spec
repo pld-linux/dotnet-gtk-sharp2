@@ -3,7 +3,7 @@ Summary:	.NET language bindings for GTK+
 Summary(pl.UTF-8):	Wiązania GTK+ dla .NET
 Name:		dotnet-gtk-sharp2
 Version:	2.12.21
-Release:	1
+Release:	2
 License:	LGPL v2
 Group:		Libraries
 # latest downloads summary at http://download.mono-project.com/sources-stable/
@@ -24,6 +24,7 @@ BuildRequires:	mono-csharp >= 1.1.16.1
 BuildRequires:	monodoc >= 1.1.16
 BuildRequires:	pango-devel
 BuildRequires:	pkgconfig
+BuildRequires:	rpmbuild(macros) >= 1.566
 BuildRequires:	rpmbuild(monoautodeps)
 Requires:	glib2 >= 1:2.31
 Requires:	gtk+2 >= 2:2.12.0
@@ -74,6 +75,9 @@ Biblioteki statyczne Gtk# 2.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
+
+# CRs break scripts (due to invalid interpreter path)
+%undos generator/gapi2-codegen.in parser/gapi2-{fixup,parser}.in parser/{gapi_pp,gapi2xml}.pl
 
 %build
 %{__libtoolize}
