@@ -1,9 +1,10 @@
+%include	/usr/lib/rpm/macros.perl
 %include	/usr/lib/rpm/macros.mono
 Summary:	.NET language bindings for GTK+
 Summary(pl.UTF-8):	Wiązania GTK+ dla .NET
 Name:		dotnet-gtk-sharp2
 Version:	2.12.21
-Release:	3
+Release:	4
 License:	LGPL v2
 Group:		Libraries
 # latest downloads summary at http://download.mono-project.com/sources-stable/
@@ -24,6 +25,7 @@ BuildRequires:	mono-csharp >= 1.1.16.1
 BuildRequires:	monodoc >= 1.1.16
 BuildRequires:	pango-devel
 BuildRequires:	pkgconfig
+BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRequires:	rpmbuild(macros) >= 1.566
 BuildRequires:	rpmbuild(monoautodeps)
 Requires:	glib2 >= 1:2.31
