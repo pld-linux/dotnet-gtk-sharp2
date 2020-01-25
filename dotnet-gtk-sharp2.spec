@@ -1,5 +1,3 @@
-%include	/usr/lib/rpm/macros.perl
-%include	/usr/lib/rpm/macros.mono
 Summary:	.NET language bindings for GTK+
 Summary(pl.UTF-8):	Wiązania GTK+ dla .NET
 Name:		dotnet-gtk-sharp2
