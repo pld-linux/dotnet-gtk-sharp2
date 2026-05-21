@@ -1,0 +1,17 @@
+GCC 14+ rejects implicit int->pointer conversion (-Wint-conversion is an error).
+windowmanager.c stores X window IDs (longs returned by gdk_property_get) into a
+gpointer array; add the explicit cast and use %p in the matching g_message.
+
+--- gtk-sharp-2.12.45/gdk/glue/windowmanager.c.orig	2026-05-21 01:30:00.000000000 +0200
++++ gtk-sharp-2.12.45/gdk/glue/windowmanager.c	2026-05-21 01:30:00.000000000 +0200
+@@ -110,8 +110,8 @@
+ 	list = g_malloc (*count * sizeof (gpointer));
+ 	/* Put all of the windows into a GList to return */
+ 	for (i = 0; i < *count; i ++) {
+-		list [i] = data [i];
+-		g_message ("WinID: %d", list [i]);
++		list [i] = (gpointer) (intptr_t) data [i];
++		g_message ("WinID: %p", list [i]);
+ 	}
+
+ 	g_free (data);

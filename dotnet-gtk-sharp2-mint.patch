@@ -1,15 +1,14 @@
-diff -urN gtk-sharp-2.12.10/configure.in gtk-sharp-2.12.10.new//configure.in
---- gtk-sharp-2.12.10/configure.in	2010-03-08 22:32:31.000000000 +0100
-+++ gtk-sharp-2.12.10.new//configure.in	2010-03-16 19:30:35.090746038 +0100
-@@ -112,6 +112,7 @@
- 
+--- gtk-sharp-2.12.45/configure.in.orig	2026-05-21 01:18:42.521388608 +0200
++++ gtk-sharp-2.12.45/configure.in	2026-05-21 01:18:42.633351580 +0200
+@@ -108,6 +108,7 @@
  MONO_REQUIRED_VERSION=1.0
+ FIRST_MONO_VERSION_WITH_NET_4_6_SUPPORT=4.4
  PKG_CHECK_MODULES(MONO_DEPENDENCY, mono >= $MONO_REQUIRED_VERSION, has_mono=true, has_mono=false)
 +PKG_CHECK_MODULES(MINT_DEPENDENCY, mint >= $MONO_REQUIRED_VERSION, has_mint=true, has_mint=false)
  if test "x$has_mono" = "xfalse" ; then
  	PKG_CHECK_MODULES(MONO_DEPENDENCY, mono-2 >= $MONO_REQUIRED_VERSION, has_mono=true, has_mono=false)
- fi
-@@ -150,6 +151,20 @@
+ 	if test "x$has_mono" = "xtrue" ; then
+@@ -155,6 +156,20 @@
  else
  	enable_dotnet=no
  fi
