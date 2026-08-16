@@ -1,0 +1,22 @@
+Fix the code generator emitting invalid C# for by-ref return values.
+
+MarshalType yields "ref T" for GValue* (and struct*) returns, but the emitted
+initialiser was "ref T raw_ret = call();".  A ref local has to be initialised
+with "= ref call();", so any binding with such a method failed to compile with
+CS8172.  Upstream gtk-sharp has no such method itself, so only out-of-tree
+bindings (galago-sharp) ever hit it.
+
+--- gtk-sharp-2.12.45/generator/Method.cs.orig
++++ gtk-sharp-2.12.45/generator/Method.cs
+@@ -329,7 +329,10 @@
+ 				if (retval.IsVoid)
+ 					sw.WriteLine(CName + call + ";");
+ 				else if (!cacheValue) {
+-					sw.WriteLine(retval.MarshalType + " raw_ret = " + CName + call + ";");
++					// a byref return needs "= ref call()"; MarshalType alone yields
++					// "ref T raw_ret = call()", which is not valid C#
++					string ret_ref = retval.MarshalType.StartsWith ("ref ") ? "ref " : String.Empty;
++					sw.WriteLine(retval.MarshalType + " raw_ret = " + ret_ref + CName + call + ";");
+ 					sw.WriteLine(indent + "\t\t\t" + retval.CSType + " ret = " + retval.FromNative ("raw_ret") + ";");
+ 					var postRef = retval.PostFromNative ("raw_ret");
+ 					if (postRef != string.Empty)

@@ -1,0 +1,17 @@
+Disambiguate Gtk.Range from System.Range in the sample.
+
+C# 8 (mono 6.x) introduced System.Range, so "using System; using Gtk;" makes
+the unqualified Range casts ambiguous and WidgetViewer.exe fails to build with
+CS0104.
+
+--- gtk-sharp-2.12.45/sample/test/TestRange.cs.orig
++++ gtk-sharp-2.12.45/sample/test/TestRange.cs
+@@ -9,6 +9,8 @@
+ using System;
+ 
+ using Gtk;
++// C# 8 added System.Range, which collides with Gtk.Range here
++using Range = Gtk.Range;
+ 
+ namespace WidgetViewer {
+ 
